@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations for mobile menu */
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+@layer components {
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+
+  .social-icon-hover {
+    @apply transition-all duration-300 transform hover:scale-110 hover:drop-shadow-lg;
+  }
+
+  .menu-backdrop {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+}
